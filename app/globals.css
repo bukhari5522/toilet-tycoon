@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #eef9ff;
+  --foreground: #173042;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Gentle bounce for built cabins — happy, cartoonish, never gross. */
+@keyframes tt-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.tt-bob {
+  animation: tt-bob 2.4s ease-in-out infinite;
+}
+
+/* Sparkle sweep on the cleanliness meter when it is high. */
+@keyframes tt-shine {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.55; }
+  100% { opacity: 0.15; }
+}
+.tt-shine {
+  animation: tt-shine 2.8s ease-in-out infinite;
+}
+
+/* Bottom-sheet rise. */
+@keyframes tt-rise {
+  from { transform: translateY(24px); opacity: 0.4; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.tt-rise {
+  animation: tt-rise 0.18s ease-out;
+}
+
+/* Coin pop when collecting. */
+@keyframes tt-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+.tt-pop {
+  animation: tt-pop 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tt-bob, .tt-shine, .tt-rise, .tt-pop {
+    animation: none;
+  }
+}
